@@ -1,0 +1,30 @@
+# view AndroidManifest.xml #generated:41
+-keep class cn.boqii.app.ui.LocationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:34
+-keep class cn.boqii.app.ui.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:42
+-keep class cn.boqii.app.ui.RelocationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:43
+-keep class cn.boqii.app.ui.ShareActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:77
+-keep class cn.boqii.app.ui.wxapi.WXEntryActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:44
+-keep class cn.sharesdk.framework.ShareSDKUIShell { <init>(...); }
+
+# view res/layout/location_layout.xml #generated:46
+-keep class com.amap.api.maps.MapView { <init>(...); }
+
+# onClick res/layout/location_layout.xml #generated:13
+# onClick res/layout/location_layout.xml #generated:20
+# onClick res/layout/location_layout.xml #generated:27
+# onClick res/layout/location_layout.xml #generated:34
+# onClick res/layout/relocation_layout.xml #generated:106
+# onClick res/layout/relocation_layout.xml #generated:39
+# onClick res/layout/share_layout.xml #generated:16
+-keepclassmembers class * { *** onAction(...); }
+

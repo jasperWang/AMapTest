@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:gravity="center_horizontal" >
+
+    <EditText
+        android:id="@+id/contentEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="请输入："
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/shareViewBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="28dip"
+        android:onClick="onAction"
+        android:text="分享全部（有界面分享）"
+        android:background="#69ffffff" />
+
+</LinearLayout>

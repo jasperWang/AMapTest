@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:background="#ff00bbff" />
+
+            <RelativeLayout
+                android:id="@+id/top"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/hese"
+                android:padding="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="98元"
+                    android:textColor="#ff008080"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/topBtn"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/fense"
+                    android:onClick="onAction"
+                    android:text="立即抢购"
+                    android:textColor="#ffffffff"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:background="#fff47920" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:background="#ff807523" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:background="#fffaa755" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:background="#b7ba6b" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:background="#56452d" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:background="#74905d" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:background="#6f60aa" />
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/hese"
+        android:padding="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:text="98元"
+            android:textColor="#ff008080"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/bottomBtn"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@color/fense"
+            android:onClick="onAction"
+            android:text="立即抢购"
+            android:textColor="#ffffffff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</FrameLayout>
