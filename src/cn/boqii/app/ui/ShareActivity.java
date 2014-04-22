@@ -6,12 +6,18 @@ import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.PlatformActionListener;
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.framework.utils.UIHandler;
+import cn.sharesdk.onekeyshare.EditPage;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler.Callback;
 import android.os.Message;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 public class ShareActivity extends Activity implements Callback {
@@ -22,7 +28,8 @@ public class ShareActivity extends Activity implements Callback {
 		setContentView(R.layout.share_layout);
 	}
 
-	public String TEST_IMAGE = "";
+	public static String TEST_IMAGE = Environment.getExternalStorageDirectory()
+			.getParent() + "/img1_color.png";
 
 	public void onAction(View v) {
 		switch (v.getId()) {
@@ -37,20 +44,37 @@ public class ShareActivity extends Activity implements Callback {
 			oks.setTitle("分享功能测试");// 标题
 			oks.setTitleUrl("http://bbs.boqii.com/content/viewthread-3130655.html");// 标题超链接
 			oks.setText("这是为了实现分享功能的测试Demo");// 内容
-			oks.setImagePath(TEST_IMAGE);// 本地图片
-			oks.setImageUrl("http://bbs.boqii.com/content/viewthread-3130655.html");// 图片指向的链接
+			// oks.setImagePath(TEST_IMAGE);// 本地图片
+			// oks.setImageUrl("http://bbs.boqii.com/content/viewthread-3130655.html");//
+			// 图片指向的链接
 			oks.setComment("( ^_^ )不错嘛");// 分享的评论，仅在人人网和 QQ 空间使用
-			oks.setSite("www.boqii.com");// site 是分享此内容的网站名称，仅在 QQ 空间使用
+			oks.setSite("波奇生活馆");// site 是分享应用的名称，仅在 QQ 空间使用
 			// siteUrl 是分享此内容的网站地址，仅在 QQ 空间使用
 			oks.setSiteUrl("http://bbs.boqii.com/content/viewthread-3130655.html");
 			// latitude 是维度数据，仅在新浪微博、腾讯微博和 Foursquare 使用
 			oks.setLatitude(31.238068f);
 			// longitude 是经度数据，仅在新浪微博、腾讯微博和 Foursquare 使用
 			oks.setLongitude(121.501654f);
+			oks.setImagePath(TEST_IMAGE);
+			oks.setImageUrl("www.boqii.com");
 			// 是否直接分享（true 则直接分享）
-			//oks.setSilent(true);
-			
-			//监听快捷分享的处理结果
+			// oks.setSilent(true);
+
+			// 自定义图标
+			Bitmap logo = BitmapFactory.decodeResource(getResources(),
+					R.drawable.u53_normal);
+			// 图标点击后会通过 Toast 提示消息
+			final OnekeyShare fOKS = oks;
+			OnClickListener listener = new OnClickListener() {
+				public void onClick(View v) {
+					startActivity(new Intent().setClass(ShareActivity.this,
+							ShareWeiboActivity.class));
+					fOKS.finish();
+				}
+			};
+			oks.setCustomerLogo(logo, "分享到微博", listener);
+
+			// 监听快捷分享的处理结果
 			oks.setCallback(new OneKeyShareCallback());
 			oks.show(this);
 
@@ -73,9 +97,9 @@ public class ShareActivity extends Activity implements Callback {
 
 		@Override
 		public void onError(Platform arg0, int arg1, Throwable arg2) {
-			Message msg=new Message();
-			msg.what=-1;
-			msg.obj=arg2;
+			Message msg = new Message();
+			msg.what = -1;
+			msg.obj = arg2;
 			UIHandler.sendMessage(msg, ShareActivity.this);
 		}
 
@@ -85,18 +109,21 @@ public class ShareActivity extends Activity implements Callback {
 	public boolean handleMessage(Message msg) {
 		switch (msg.what) {
 		case -1:
-			Toast.makeText(ShareActivity.this, "分享失败，原因："+msg.obj, Toast.LENGTH_LONG).show();
+			Toast.makeText(ShareActivity.this, "分享失败，原因：" + msg.obj,
+					Toast.LENGTH_LONG).show();
 			break;
 		case 1:
-			Toast.makeText(ShareActivity.this, "分享成功", Toast.LENGTH_SHORT).show();
+			Toast.makeText(ShareActivity.this, "分享成功", Toast.LENGTH_SHORT)
+					.show();
 			break;
 		case 0:
-			Toast.makeText(ShareActivity.this, "取消分享", Toast.LENGTH_SHORT).show();
+			Toast.makeText(ShareActivity.this, "取消分享", Toast.LENGTH_SHORT)
+					.show();
 			break;
 		}
 		return false;
 	}
-	
+
 	@Override
 	protected void onDestroy() {
 		ShareSDK.stopSDK(this);
