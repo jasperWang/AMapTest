@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="18dip" >
+
+    <EditText
+        android:id="@+id/shareETxt"
+        android:layout_width="match_parent"
+        android:layout_height="260dip"
+        android:drawableTop="@drawable/img1_color"
+        android:gravity="left|top"
+        android:inputType="textMultiLine"
+        android:text="您好啊！测试" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <CheckBox
+            android:id="@+id/sinaCB"
+            android:layout_width="@dimen/share_weibo_layout_width"
+            android:layout_height="@dimen/share_weibo_layout_height"
+            android:background="@drawable/logo_sinaweibo"
+            android:button="@null"
+            android:checked="false"/>
+
+        <CheckBox
+            android:id="@+id/tencentCB"
+            android:layout_width="@dimen/share_weibo_layout_width"
+            android:layout_height="@dimen/share_weibo_layout_height"
+            android:layout_marginLeft="@dimen/margin"
+            android:background="@drawable/logo_tencentweibo"
+            android:button="@null"
+            android:checked="false" />
+
+        <CheckBox
+            android:id="@+id/qZoneCB"
+            android:layout_width="@dimen/share_weibo_layout_width"
+            android:layout_height="@dimen/share_weibo_layout_height"
+            android:layout_marginLeft="@dimen/margin"
+            android:background="@drawable/logo_qzone"
+            android:button="@null"
+            android:checked="false" />
+
+        <CheckBox
+            android:id="@+id/netEaseMicroCB"
+            android:layout_width="@dimen/share_weibo_layout_width"
+            android:layout_height="@dimen/share_weibo_layout_height"
+            android:layout_marginLeft="@dimen/margin"
+            android:background="@drawable/logo_neteasemicroblog"
+            android:button="@null"
+            android:checked="false" />
+
+        <TextView
+            android:id="@+id/totalNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:text="还可输入140个字"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/shareBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="分享" 
+        android:layout_marginTop="@dimen/margin"
+        android:padding="@dimen/margin"
+        android:onClick="onAction"/>
+
+</LinearLayout>
