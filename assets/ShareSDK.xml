@@ -61,9 +61,9 @@
     <QZone
         AppId="100371282"
         AppKey="aed9b0303e3ed1e27bae87c33761161d"
-        Enable="false"
+        Enable="true"
         Id="2"
-        ShareByAppClient="true"
+        ShareByAppClient="false"
         SortId="2" />
 
    
@@ -71,25 +71,25 @@
     <TencentWeibo
         AppKey="801307650"
         AppSecret="ae36f4ee3946e1cbb98d6965b0b2ff5c"
-        Enable="false"
+        Enable="true"
         Id="3"
         RedirectUri="http://www.boqii.com"
         SortId="3" />
     
-     <NetEaseMicroBlog
+      <NetEaseMicroBlog
+        Id="4"
+        SortId="4"
         ConsumerKey="T5EI7BXe13vfyDuy"
         ConsumerSecret="gZxwyNOvjFYpxwwlnuizHRRtBRZ2lV1j"
-        Enable="false"
-        Id="4"
-        RedirectUri="http://www.boqii.com"
-        SortId="4" />
+        RedirectUri="http://www.shareSDK.cn"
+        Enable="true" />
 
      <SinaWeibo
         AppKey="568898243"
         AppSecret="38a4f8204cc784f81f9f0daaf31e02e3"
-        Enable="false"
+        Enable="true"
         Id="5"
-        RedirectUrl="http://www.boqii.com"
+        RedirectUrl="http://www.sharesdk.cn"
         ShareByAppClient="true"
         SortId="5" />
     <!--Wechat微信和WechatMoments微信朋友圈的appid是一样的；
