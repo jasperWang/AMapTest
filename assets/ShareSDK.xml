@@ -63,7 +63,7 @@
         AppKey="aed9b0303e3ed1e27bae87c33761161d"
         Enable="true"
         Id="2"
-        ShareByAppClient="false"
+        ShareByAppClient="true"
         SortId="2" />
 
    
