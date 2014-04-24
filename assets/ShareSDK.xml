@@ -46,7 +46,7 @@
 			Instagram     http://instagram.com/developer#
 			VKontakte     http://vk.com/dev-->
 
-    <ShareSDK AppKey="androidv1101" />
+    <ShareSDK AppKey="1a4ec557094c" />
     <!-- 修改成你在sharesdk后台注册的应用的appkey" -->
     <!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->
 
@@ -73,15 +73,15 @@
         AppSecret="ae36f4ee3946e1cbb98d6965b0b2ff5c"
         Enable="true"
         Id="3"
-        RedirectUri="http://www.boqii.com"
+        RedirectUri="http://www.sharesdk.cn"
         SortId="3" />
     
       <NetEaseMicroBlog
         Id="4"
         SortId="4"
-        ConsumerKey="T5EI7BXe13vfyDuy"
-        ConsumerSecret="gZxwyNOvjFYpxwwlnuizHRRtBRZ2lV1j"
-        RedirectUri="http://www.shareSDK.cn"
+        ConsumerKey="CvOzLehOUFzutmr4"
+        ConsumerSecret="aJnxrlTbtssgibEGEPx68j7Mgs3pBm0f"
+        RedirectUri="http://www.boqii.com"
         Enable="true" />
 
      <SinaWeibo
